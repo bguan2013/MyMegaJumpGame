@@ -7,15 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C43FA1F71AD4D35D009A2582 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FA1F61AD4D35D009A2582 /* Player.m */; };
+		C472C7EC1AD36F3300697F3B /* Assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C01AD36F3300697F3B /* Assets.atlas */; };
+		C472C7ED1AD36F3300697F3B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C21AD36F3300697F3B /* Background.png */; };
+		C472C7EE1AD36F3300697F3B /* Background01.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C31AD36F3300697F3B /* Background01.png */; };
+		C472C7EF1AD36F3300697F3B /* Background01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C41AD36F3300697F3B /* Background01@2x.png */; };
+		C472C7F01AD36F3300697F3B /* Background02.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C51AD36F3300697F3B /* Background02.png */; };
+		C472C7F11AD36F3300697F3B /* Background02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C61AD36F3300697F3B /* Background02@2x.png */; };
+		C472C7F21AD36F3300697F3B /* Background03.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C71AD36F3300697F3B /* Background03.png */; };
+		C472C7F31AD36F3300697F3B /* Background03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C81AD36F3300697F3B /* Background03@2x.png */; };
+		C472C7F41AD36F3300697F3B /* Background04.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C91AD36F3300697F3B /* Background04.png */; };
+		C472C7F51AD36F3300697F3B /* Background04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CA1AD36F3300697F3B /* Background04@2x.png */; };
+		C472C7F61AD36F3300697F3B /* Background05.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CB1AD36F3300697F3B /* Background05.png */; };
+		C472C7F71AD36F3300697F3B /* Background05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CC1AD36F3300697F3B /* Background05@2x.png */; };
+		C472C7F81AD36F3300697F3B /* Background06.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CD1AD36F3300697F3B /* Background06.png */; };
+		C472C7F91AD36F3300697F3B /* Background06@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CE1AD36F3300697F3B /* Background06@2x.png */; };
+		C472C7FA1AD36F3300697F3B /* Background07.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7CF1AD36F3300697F3B /* Background07.png */; };
+		C472C7FB1AD36F3300697F3B /* Background07@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D01AD36F3300697F3B /* Background07@2x.png */; };
+		C472C7FC1AD36F3300697F3B /* Background08.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D11AD36F3300697F3B /* Background08.png */; };
+		C472C7FD1AD36F3300697F3B /* Background08@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D21AD36F3300697F3B /* Background08@2x.png */; };
+		C472C7FE1AD36F3300697F3B /* Background09.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D31AD36F3300697F3B /* Background09.png */; };
+		C472C7FF1AD36F3300697F3B /* Background09@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D41AD36F3300697F3B /* Background09@2x.png */; };
+		C472C8001AD36F3300697F3B /* Background10.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D51AD36F3300697F3B /* Background10.png */; };
+		C472C8011AD36F3300697F3B /* Background10@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D61AD36F3300697F3B /* Background10@2x.png */; };
+		C472C8021AD36F3300697F3B /* Background11.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D71AD36F3300697F3B /* Background11.png */; };
+		C472C8031AD36F3300697F3B /* Background11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D81AD36F3300697F3B /* Background11@2x.png */; };
+		C472C8041AD36F3300697F3B /* Background12.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7D91AD36F3300697F3B /* Background12.png */; };
+		C472C8051AD36F3300697F3B /* Background12@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DA1AD36F3300697F3B /* Background12@2x.png */; };
+		C472C8061AD36F3300697F3B /* Background13.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DB1AD36F3300697F3B /* Background13.png */; };
+		C472C8071AD36F3300697F3B /* Background13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DC1AD36F3300697F3B /* Background13@2x.png */; };
+		C472C8081AD36F3300697F3B /* Background14.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DD1AD36F3300697F3B /* Background14.png */; };
+		C472C8091AD36F3300697F3B /* Background14@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DE1AD36F3300697F3B /* Background14@2x.png */; };
+		C472C80A1AD36F3300697F3B /* Background15.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7DF1AD36F3300697F3B /* Background15.png */; };
+		C472C80B1AD36F3300697F3B /* Background15@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E01AD36F3300697F3B /* Background15@2x.png */; };
+		C472C80C1AD36F3300697F3B /* Background16.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E11AD36F3300697F3B /* Background16.png */; };
+		C472C80D1AD36F3300697F3B /* Background16@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E21AD36F3300697F3B /* Background16@2x.png */; };
+		C472C80E1AD36F3300697F3B /* Background17.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E31AD36F3300697F3B /* Background17.png */; };
+		C472C80F1AD36F3300697F3B /* Background17@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E41AD36F3300697F3B /* Background17@2x.png */; };
+		C472C8101AD36F3300697F3B /* Background18.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E51AD36F3300697F3B /* Background18.png */; };
+		C472C8111AD36F3300697F3B /* Background18@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E61AD36F3300697F3B /* Background18@2x.png */; };
+		C472C8121AD36F3300697F3B /* Background19.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E71AD36F3300697F3B /* Background19.png */; };
+		C472C8131AD36F3300697F3B /* Background19@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E81AD36F3300697F3B /* Background19@2x.png */; };
+		C472C8141AD36F3300697F3B /* Background20.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7E91AD36F3300697F3B /* Background20.png */; };
+		C472C8151AD36F3300697F3B /* Background20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7EA1AD36F3300697F3B /* Background20@2x.png */; };
+		C472C8161AD36F3300697F3B /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7EB1AD36F3300697F3B /* Background@2x.png */; };
+		C472C81B1AD3706D00697F3B /* MegaJumpFirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C472C81A1AD3706D00697F3B /* MegaJumpFirstScene.m */; };
+		C472C81D1AD372D200697F3B /* MegaJumpFirstScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */; };
+		C47CFFF71ADA2E0800731C5A /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = C47CFFF61ADA2E0800731C5A /* Platform.m */; };
 		C4B26FBC1A7FF25E00D6A3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FBB1A7FF25E00D6A3E9 /* main.m */; };
 		C4B26FBF1A7FF25E00D6A3E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FBE1A7FF25E00D6A3E9 /* AppDelegate.m */; };
-		C4B26FC21A7FF25E00D6A3E9 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FC11A7FF25E00D6A3E9 /* GameScene.m */; };
-		C4B26FC41A7FF25E00D6A3E9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C4B26FC31A7FF25E00D6A3E9 /* GameScene.sks */; };
 		C4B26FC71A7FF25E00D6A3E9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FC61A7FF25E00D6A3E9 /* GameViewController.m */; };
 		C4B26FCA1A7FF25E00D6A3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B26FC81A7FF25E00D6A3E9 /* Main.storyboard */; };
 		C4B26FCC1A7FF25E00D6A3E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4B26FCB1A7FF25E00D6A3E9 /* Images.xcassets */; };
 		C4B26FCF1A7FF25E00D6A3E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4B26FCD1A7FF25E00D6A3E9 /* LaunchScreen.xib */; };
 		C4B26FDB1A7FF25E00D6A3E9 /* MyMegaJumpGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FDA1A7FF25E00D6A3E9 /* MyMegaJumpGameTests.m */; };
+		C4FBC6C71ADA1A8B00097905 /* GameObjectNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FBC6C61ADA1A8B00097905 /* GameObjectNode.m */; };
+		C4FBC6CA1ADA1ED300097905 /* Star.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FBC6C91ADA1ED300097905 /* Star.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,14 +76,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C43FA1F51AD4D35D009A2582 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		C43FA1F61AD4D35D009A2582 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		C472C7C01AD36F3300697F3B /* Assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Assets.atlas; sourceTree = "<group>"; };
+		C472C7C21AD36F3300697F3B /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		C472C7C31AD36F3300697F3B /* Background01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background01.png; sourceTree = "<group>"; };
+		C472C7C41AD36F3300697F3B /* Background01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background01@2x.png"; sourceTree = "<group>"; };
+		C472C7C51AD36F3300697F3B /* Background02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background02.png; sourceTree = "<group>"; };
+		C472C7C61AD36F3300697F3B /* Background02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background02@2x.png"; sourceTree = "<group>"; };
+		C472C7C71AD36F3300697F3B /* Background03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background03.png; sourceTree = "<group>"; };
+		C472C7C81AD36F3300697F3B /* Background03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background03@2x.png"; sourceTree = "<group>"; };
+		C472C7C91AD36F3300697F3B /* Background04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background04.png; sourceTree = "<group>"; };
+		C472C7CA1AD36F3300697F3B /* Background04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background04@2x.png"; sourceTree = "<group>"; };
+		C472C7CB1AD36F3300697F3B /* Background05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background05.png; sourceTree = "<group>"; };
+		C472C7CC1AD36F3300697F3B /* Background05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background05@2x.png"; sourceTree = "<group>"; };
+		C472C7CD1AD36F3300697F3B /* Background06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background06.png; sourceTree = "<group>"; };
+		C472C7CE1AD36F3300697F3B /* Background06@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background06@2x.png"; sourceTree = "<group>"; };
+		C472C7CF1AD36F3300697F3B /* Background07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background07.png; sourceTree = "<group>"; };
+		C472C7D01AD36F3300697F3B /* Background07@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background07@2x.png"; sourceTree = "<group>"; };
+		C472C7D11AD36F3300697F3B /* Background08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background08.png; sourceTree = "<group>"; };
+		C472C7D21AD36F3300697F3B /* Background08@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background08@2x.png"; sourceTree = "<group>"; };
+		C472C7D31AD36F3300697F3B /* Background09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background09.png; sourceTree = "<group>"; };
+		C472C7D41AD36F3300697F3B /* Background09@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background09@2x.png"; sourceTree = "<group>"; };
+		C472C7D51AD36F3300697F3B /* Background10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background10.png; sourceTree = "<group>"; };
+		C472C7D61AD36F3300697F3B /* Background10@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background10@2x.png"; sourceTree = "<group>"; };
+		C472C7D71AD36F3300697F3B /* Background11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background11.png; sourceTree = "<group>"; };
+		C472C7D81AD36F3300697F3B /* Background11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background11@2x.png"; sourceTree = "<group>"; };
+		C472C7D91AD36F3300697F3B /* Background12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background12.png; sourceTree = "<group>"; };
+		C472C7DA1AD36F3300697F3B /* Background12@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background12@2x.png"; sourceTree = "<group>"; };
+		C472C7DB1AD36F3300697F3B /* Background13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background13.png; sourceTree = "<group>"; };
+		C472C7DC1AD36F3300697F3B /* Background13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background13@2x.png"; sourceTree = "<group>"; };
+		C472C7DD1AD36F3300697F3B /* Background14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background14.png; sourceTree = "<group>"; };
+		C472C7DE1AD36F3300697F3B /* Background14@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background14@2x.png"; sourceTree = "<group>"; };
+		C472C7DF1AD36F3300697F3B /* Background15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background15.png; sourceTree = "<group>"; };
+		C472C7E01AD36F3300697F3B /* Background15@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background15@2x.png"; sourceTree = "<group>"; };
+		C472C7E11AD36F3300697F3B /* Background16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background16.png; sourceTree = "<group>"; };
+		C472C7E21AD36F3300697F3B /* Background16@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background16@2x.png"; sourceTree = "<group>"; };
+		C472C7E31AD36F3300697F3B /* Background17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background17.png; sourceTree = "<group>"; };
+		C472C7E41AD36F3300697F3B /* Background17@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background17@2x.png"; sourceTree = "<group>"; };
+		C472C7E51AD36F3300697F3B /* Background18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background18.png; sourceTree = "<group>"; };
+		C472C7E61AD36F3300697F3B /* Background18@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background18@2x.png"; sourceTree = "<group>"; };
+		C472C7E71AD36F3300697F3B /* Background19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background19.png; sourceTree = "<group>"; };
+		C472C7E81AD36F3300697F3B /* Background19@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background19@2x.png"; sourceTree = "<group>"; };
+		C472C7E91AD36F3300697F3B /* Background20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background20.png; sourceTree = "<group>"; };
+		C472C7EA1AD36F3300697F3B /* Background20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background20@2x.png"; sourceTree = "<group>"; };
+		C472C7EB1AD36F3300697F3B /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
+		C472C8191AD3706D00697F3B /* MegaJumpFirstScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MegaJumpFirstScene.h; sourceTree = "<group>"; };
+		C472C81A1AD3706D00697F3B /* MegaJumpFirstScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MegaJumpFirstScene.m; sourceTree = "<group>"; };
+		C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MegaJumpFirstScene.sks; sourceTree = "<group>"; };
+		C47CFFF51ADA2E0800731C5A /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		C47CFFF61ADA2E0800731C5A /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Platform.m; sourceTree = "<group>"; };
 		C4B26FB61A7FF25E00D6A3E9 /* MyMegaJumpGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMegaJumpGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B26FBA1A7FF25E00D6A3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B26FBB1A7FF25E00D6A3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4B26FBD1A7FF25E00D6A3E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C4B26FBE1A7FF25E00D6A3E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C4B26FC01A7FF25E00D6A3E9 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		C4B26FC11A7FF25E00D6A3E9 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		C4B26FC31A7FF25E00D6A3E9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C4B26FC51A7FF25E00D6A3E9 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		C4B26FC61A7FF25E00D6A3E9 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		C4B26FC91A7FF25E00D6A3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +139,10 @@
 		C4B26FD41A7FF25E00D6A3E9 /* MyMegaJumpGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyMegaJumpGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B26FD91A7FF25E00D6A3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B26FDA1A7FF25E00D6A3E9 /* MyMegaJumpGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMegaJumpGameTests.m; sourceTree = "<group>"; };
+		C4FBC6C51ADA1A8B00097905 /* GameObjectNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObjectNode.h; sourceTree = "<group>"; };
+		C4FBC6C61ADA1A8B00097905 /* GameObjectNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObjectNode.m; sourceTree = "<group>"; };
+		C4FBC6C81ADA1ED300097905 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
+		C4FBC6C91ADA1ED300097905 /* Star.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Star.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,12 +163,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C472C7BF1AD36F3300697F3B /* MegaJumpGraphics */ = {
+			isa = PBXGroup;
+			children = (
+				C472C7C01AD36F3300697F3B /* Assets.atlas */,
+				C472C7C11AD36F3300697F3B /* Backgrounds */,
+			);
+			name = MegaJumpGraphics;
+			path = MyMegaJumpGame/UberJumpGraphics;
+			sourceTree = "<group>";
+		};
+		C472C7C11AD36F3300697F3B /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				C472C7C21AD36F3300697F3B /* Background.png */,
+				C472C7C31AD36F3300697F3B /* Background01.png */,
+				C472C7C41AD36F3300697F3B /* Background01@2x.png */,
+				C472C7C51AD36F3300697F3B /* Background02.png */,
+				C472C7C61AD36F3300697F3B /* Background02@2x.png */,
+				C472C7C71AD36F3300697F3B /* Background03.png */,
+				C472C7C81AD36F3300697F3B /* Background03@2x.png */,
+				C472C7C91AD36F3300697F3B /* Background04.png */,
+				C472C7CA1AD36F3300697F3B /* Background04@2x.png */,
+				C472C7CB1AD36F3300697F3B /* Background05.png */,
+				C472C7CC1AD36F3300697F3B /* Background05@2x.png */,
+				C472C7CD1AD36F3300697F3B /* Background06.png */,
+				C472C7CE1AD36F3300697F3B /* Background06@2x.png */,
+				C472C7CF1AD36F3300697F3B /* Background07.png */,
+				C472C7D01AD36F3300697F3B /* Background07@2x.png */,
+				C472C7D11AD36F3300697F3B /* Background08.png */,
+				C472C7D21AD36F3300697F3B /* Background08@2x.png */,
+				C472C7D31AD36F3300697F3B /* Background09.png */,
+				C472C7D41AD36F3300697F3B /* Background09@2x.png */,
+				C472C7D51AD36F3300697F3B /* Background10.png */,
+				C472C7D61AD36F3300697F3B /* Background10@2x.png */,
+				C472C7D71AD36F3300697F3B /* Background11.png */,
+				C472C7D81AD36F3300697F3B /* Background11@2x.png */,
+				C472C7D91AD36F3300697F3B /* Background12.png */,
+				C472C7DA1AD36F3300697F3B /* Background12@2x.png */,
+				C472C7DB1AD36F3300697F3B /* Background13.png */,
+				C472C7DC1AD36F3300697F3B /* Background13@2x.png */,
+				C472C7DD1AD36F3300697F3B /* Background14.png */,
+				C472C7DE1AD36F3300697F3B /* Background14@2x.png */,
+				C472C7DF1AD36F3300697F3B /* Background15.png */,
+				C472C7E01AD36F3300697F3B /* Background15@2x.png */,
+				C472C7E11AD36F3300697F3B /* Background16.png */,
+				C472C7E21AD36F3300697F3B /* Background16@2x.png */,
+				C472C7E31AD36F3300697F3B /* Background17.png */,
+				C472C7E41AD36F3300697F3B /* Background17@2x.png */,
+				C472C7E51AD36F3300697F3B /* Background18.png */,
+				C472C7E61AD36F3300697F3B /* Background18@2x.png */,
+				C472C7E71AD36F3300697F3B /* Background19.png */,
+				C472C7E81AD36F3300697F3B /* Background19@2x.png */,
+				C472C7E91AD36F3300697F3B /* Background20.png */,
+				C472C7EA1AD36F3300697F3B /* Background20@2x.png */,
+				C472C7EB1AD36F3300697F3B /* Background@2x.png */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
 		C4B26FAD1A7FF25E00D6A3E9 = {
 			isa = PBXGroup;
 			children = (
 				C4B26FB81A7FF25E00D6A3E9 /* MyMegaJumpGame */,
 				C4B26FD71A7FF25E00D6A3E9 /* MyMegaJumpGameTests */,
 				C4B26FB71A7FF25E00D6A3E9 /* Products */,
+				C472C7BF1AD36F3300697F3B /* MegaJumpGraphics */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,15 +246,23 @@
 			children = (
 				C4B26FBD1A7FF25E00D6A3E9 /* AppDelegate.h */,
 				C4B26FBE1A7FF25E00D6A3E9 /* AppDelegate.m */,
-				C4B26FC01A7FF25E00D6A3E9 /* GameScene.h */,
-				C4B26FC11A7FF25E00D6A3E9 /* GameScene.m */,
-				C4B26FC31A7FF25E00D6A3E9 /* GameScene.sks */,
+				C472C8191AD3706D00697F3B /* MegaJumpFirstScene.h */,
+				C472C81A1AD3706D00697F3B /* MegaJumpFirstScene.m */,
+				C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */,
 				C4B26FC51A7FF25E00D6A3E9 /* GameViewController.h */,
 				C4B26FC61A7FF25E00D6A3E9 /* GameViewController.m */,
 				C4B26FC81A7FF25E00D6A3E9 /* Main.storyboard */,
 				C4B26FCB1A7FF25E00D6A3E9 /* Images.xcassets */,
 				C4B26FCD1A7FF25E00D6A3E9 /* LaunchScreen.xib */,
 				C4B26FB91A7FF25E00D6A3E9 /* Supporting Files */,
+				C43FA1F51AD4D35D009A2582 /* Player.h */,
+				C43FA1F61AD4D35D009A2582 /* Player.m */,
+				C4FBC6C81ADA1ED300097905 /* Star.h */,
+				C4FBC6C91ADA1ED300097905 /* Star.m */,
+				C47CFFF51ADA2E0800731C5A /* Platform.h */,
+				C47CFFF61ADA2E0800731C5A /* Platform.m */,
+				C4FBC6C51ADA1A8B00097905 /* GameObjectNode.h */,
+				C4FBC6C61ADA1A8B00097905 /* GameObjectNode.m */,
 			);
 			path = MyMegaJumpGame;
 			sourceTree = "<group>";
@@ -207,9 +373,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C472C8021AD36F3300697F3B /* Background11.png in Resources */,
+				C472C7FC1AD36F3300697F3B /* Background08.png in Resources */,
+				C472C8131AD36F3300697F3B /* Background19@2x.png in Resources */,
+				C472C7F01AD36F3300697F3B /* Background02.png in Resources */,
+				C472C8121AD36F3300697F3B /* Background19.png in Resources */,
+				C472C7EE1AD36F3300697F3B /* Background01.png in Resources */,
+				C472C7EF1AD36F3300697F3B /* Background01@2x.png in Resources */,
+				C472C8041AD36F3300697F3B /* Background12.png in Resources */,
+				C472C8061AD36F3300697F3B /* Background13.png in Resources */,
+				C472C7FB1AD36F3300697F3B /* Background07@2x.png in Resources */,
+				C472C7F61AD36F3300697F3B /* Background05.png in Resources */,
+				C472C80E1AD36F3300697F3B /* Background17.png in Resources */,
+				C472C7F31AD36F3300697F3B /* Background03@2x.png in Resources */,
+				C472C7F71AD36F3300697F3B /* Background05@2x.png in Resources */,
 				C4B26FCF1A7FF25E00D6A3E9 /* LaunchScreen.xib in Resources */,
 				C4B26FCC1A7FF25E00D6A3E9 /* Images.xcassets in Resources */,
-				C4B26FC41A7FF25E00D6A3E9 /* GameScene.sks in Resources */,
+				C472C7FD1AD36F3300697F3B /* Background08@2x.png in Resources */,
+				C472C7F51AD36F3300697F3B /* Background04@2x.png in Resources */,
+				C472C8141AD36F3300697F3B /* Background20.png in Resources */,
+				C472C8091AD36F3300697F3B /* Background14@2x.png in Resources */,
+				C472C7EC1AD36F3300697F3B /* Assets.atlas in Resources */,
+				C472C7F91AD36F3300697F3B /* Background06@2x.png in Resources */,
+				C472C7F81AD36F3300697F3B /* Background06.png in Resources */,
+				C472C7F11AD36F3300697F3B /* Background02@2x.png in Resources */,
+				C472C7ED1AD36F3300697F3B /* Background.png in Resources */,
+				C472C8071AD36F3300697F3B /* Background13@2x.png in Resources */,
+				C472C8011AD36F3300697F3B /* Background10@2x.png in Resources */,
+				C472C80F1AD36F3300697F3B /* Background17@2x.png in Resources */,
+				C472C80D1AD36F3300697F3B /* Background16@2x.png in Resources */,
+				C472C8161AD36F3300697F3B /* Background@2x.png in Resources */,
+				C472C80A1AD36F3300697F3B /* Background15.png in Resources */,
+				C472C8151AD36F3300697F3B /* Background20@2x.png in Resources */,
+				C472C7FF1AD36F3300697F3B /* Background09@2x.png in Resources */,
+				C472C81D1AD372D200697F3B /* MegaJumpFirstScene.sks in Resources */,
+				C472C8101AD36F3300697F3B /* Background18.png in Resources */,
+				C472C8001AD36F3300697F3B /* Background10.png in Resources */,
+				C472C8081AD36F3300697F3B /* Background14.png in Resources */,
+				C472C7F41AD36F3300697F3B /* Background04.png in Resources */,
+				C472C8031AD36F3300697F3B /* Background11@2x.png in Resources */,
+				C472C7F21AD36F3300697F3B /* Background03.png in Resources */,
+				C472C7FA1AD36F3300697F3B /* Background07.png in Resources */,
+				C472C8111AD36F3300697F3B /* Background18@2x.png in Resources */,
+				C472C80C1AD36F3300697F3B /* Background16.png in Resources */,
+				C472C8051AD36F3300697F3B /* Background12@2x.png in Resources */,
+				C472C7FE1AD36F3300697F3B /* Background09.png in Resources */,
+				C472C80B1AD36F3300697F3B /* Background15@2x.png in Resources */,
 				C4B26FCA1A7FF25E00D6A3E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,8 +439,12 @@
 			files = (
 				C4B26FC71A7FF25E00D6A3E9 /* GameViewController.m in Sources */,
 				C4B26FBF1A7FF25E00D6A3E9 /* AppDelegate.m in Sources */,
-				C4B26FC21A7FF25E00D6A3E9 /* GameScene.m in Sources */,
+				C47CFFF71ADA2E0800731C5A /* Platform.m in Sources */,
+				C4FBC6CA1ADA1ED300097905 /* Star.m in Sources */,
+				C472C81B1AD3706D00697F3B /* MegaJumpFirstScene.m in Sources */,
+				C43FA1F71AD4D35D009A2582 /* Player.m in Sources */,
 				C4B26FBC1A7FF25E00D6A3E9 /* main.m in Sources */,
+				C4FBC6C71ADA1A8B00097905 /* GameObjectNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyMegaJumpGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -364,6 +578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyMegaJumpGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +637,7 @@
 				C4B26FE01A7FF25E00D6A3E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4B26FE11A7FF25E00D6A3E9 /* Build configuration list for PBXNativeTarget "MyMegaJumpGameTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +646,7 @@
 				C4B26FE31A7FF25E00D6A3E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

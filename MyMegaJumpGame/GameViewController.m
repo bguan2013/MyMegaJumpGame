@@ -7,7 +7,7 @@
 //
 
 #import "GameViewController.h"
-#import "GameScene.h"
+#import "MegaJumpFirstScene.h"
 
 @implementation SKScene (Unarchive)
 
@@ -30,9 +30,9 @@
 
 @implementation GameViewController
 
-- (void)viewDidLoad
+- (void)viewWillLayoutSubviews
 {
-    [super viewDidLoad];
+    [super viewWillLayoutSubviews];
 
     // Configure the view.
     SKView * skView = (SKView *)self.view;
@@ -42,7 +42,7 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
+    MegaJumpFirstScene *scene = [MegaJumpFirstScene sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
@@ -69,6 +69,8 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+
+//Hides the status bar(the signal battery bar on the top)
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
