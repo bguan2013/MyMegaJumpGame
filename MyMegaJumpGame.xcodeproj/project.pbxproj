@@ -54,6 +54,9 @@
 		C472C81B1AD3706D00697F3B /* MegaJumpFirstScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C472C81A1AD3706D00697F3B /* MegaJumpFirstScene.m */; };
 		C472C81D1AD372D200697F3B /* MegaJumpFirstScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */; };
 		C47CFFF71ADA2E0800731C5A /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = C47CFFF61ADA2E0800731C5A /* Platform.m */; };
+		C4A332811ADB077B00D6250E /* StarPing.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4A332801ADB077B00D6250E /* StarPing.wav */; };
+		C4A332841ADB157200D6250E /* Level01.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4A332831ADB157200D6250E /* Level01.plist */; };
+		C4A332861ADB1D9100D6250E /* Level02.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4A332851ADB1D9100D6250E /* Level02.plist */; };
 		C4B26FBC1A7FF25E00D6A3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FBB1A7FF25E00D6A3E9 /* main.m */; };
 		C4B26FBF1A7FF25E00D6A3E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FBE1A7FF25E00D6A3E9 /* AppDelegate.m */; };
 		C4B26FC71A7FF25E00D6A3E9 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B26FC61A7FF25E00D6A3E9 /* GameViewController.m */; };
@@ -126,6 +129,9 @@
 		C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MegaJumpFirstScene.sks; sourceTree = "<group>"; };
 		C47CFFF51ADA2E0800731C5A /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
 		C47CFFF61ADA2E0800731C5A /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Platform.m; sourceTree = "<group>"; };
+		C4A332801ADB077B00D6250E /* StarPing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = StarPing.wav; sourceTree = "<group>"; };
+		C4A332831ADB157200D6250E /* Level01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level01.plist; sourceTree = "<group>"; };
+		C4A332851ADB1D9100D6250E /* Level02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Level02.plist; sourceTree = "<group>"; };
 		C4B26FB61A7FF25E00D6A3E9 /* MyMegaJumpGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMegaJumpGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B26FBA1A7FF25E00D6A3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4B26FBB1A7FF25E00D6A3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -222,9 +228,29 @@
 			path = Backgrounds;
 			sourceTree = "<group>";
 		};
+		C4A3327F1ADB068B00D6250E /* SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				C4A332801ADB077B00D6250E /* StarPing.wav */,
+			);
+			name = SoundEffects;
+			path = MyMegaJumpGame.xcodeproj;
+			sourceTree = "<group>";
+		};
+		C4A332821ADB155D00D6250E /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				C4A332831ADB157200D6250E /* Level01.plist */,
+				C4A332851ADB1D9100D6250E /* Level02.plist */,
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
 		C4B26FAD1A7FF25E00D6A3E9 = {
 			isa = PBXGroup;
 			children = (
+				C4A332821ADB155D00D6250E /* Levels */,
+				C4A3327F1ADB068B00D6250E /* SoundEffects */,
 				C4B26FB81A7FF25E00D6A3E9 /* MyMegaJumpGame */,
 				C4B26FD71A7FF25E00D6A3E9 /* MyMegaJumpGameTests */,
 				C4B26FB71A7FF25E00D6A3E9 /* Products */,
@@ -373,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A332811ADB077B00D6250E /* StarPing.wav in Resources */,
 				C472C8021AD36F3300697F3B /* Background11.png in Resources */,
 				C472C7FC1AD36F3300697F3B /* Background08.png in Resources */,
 				C472C8131AD36F3300697F3B /* Background19@2x.png in Resources */,
@@ -402,6 +429,7 @@
 				C472C8011AD36F3300697F3B /* Background10@2x.png in Resources */,
 				C472C80F1AD36F3300697F3B /* Background17@2x.png in Resources */,
 				C472C80D1AD36F3300697F3B /* Background16@2x.png in Resources */,
+				C4A332841ADB157200D6250E /* Level01.plist in Resources */,
 				C472C8161AD36F3300697F3B /* Background@2x.png in Resources */,
 				C472C80A1AD36F3300697F3B /* Background15.png in Resources */,
 				C472C8151AD36F3300697F3B /* Background20@2x.png in Resources */,
@@ -410,6 +438,7 @@
 				C472C8101AD36F3300697F3B /* Background18.png in Resources */,
 				C472C8001AD36F3300697F3B /* Background10.png in Resources */,
 				C472C8081AD36F3300697F3B /* Background14.png in Resources */,
+				C4A332861ADB1D9100D6250E /* Level02.plist in Resources */,
 				C472C7F41AD36F3300697F3B /* Background04.png in Resources */,
 				C472C8031AD36F3300697F3B /* Background11@2x.png in Resources */,
 				C472C7F21AD36F3300697F3B /* Background03.png in Resources */,

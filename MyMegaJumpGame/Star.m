@@ -8,13 +8,30 @@
 
 #import "Star.h"
 
+@interface Star (){
+    
+    SKAction *_starSound;
+}
+
+@end
+
 @implementation Star
 
 -(BOOL)collisionWithPlayer:(Player *)player{
     
     player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 400.0f);
+    [self.parent runAction:_starSound];
     [self removeFromParent];
     return YES;
+    
+}
+
+-(id)init{
+    
+    if(self = [super init]){
+        _starSound = [SKAction playSoundFileNamed:@"StarPing.wav" waitForCompletion:NO];
+    }
+    return self;
     
 }
 

@@ -22,6 +22,7 @@ typedef NS_OPTIONS(uint32_t, Category){
     SKNode *_foregroundNode;
     SKNode *_hudNode;
     SKNode *_player;
+    int _endY;
     
 }
 
@@ -29,8 +30,25 @@ typedef NS_OPTIONS(uint32_t, Category){
 
 @implementation MegaJumpFirstScene
 
--(instancetype)initWithSize:(CGSize)size{
-    if (self == [super initWithSize:size]) {
+-(id)initWithSize:(CGSize)size{
+    
+    if (self = [super initWithSize:size]) {
+        
+        NSString *levelOnePlist = [[NSBundle mainBundle] pathForResource:@"Level01" ofType:@"plist"];
+        NSDictionary *levelOneInformation = [NSDictionary dictionaryWithContentsOfFile:levelOnePlist];
+        
+        _endY = [levelOneInformation[@"EndY"] intValue];
+        
+        NSDictionary *stars = levelOneInformation[@"Stars"];
+        NSDictionary *starPatterns = stars[@"Patterns"];
+        NSArray *starPositions = stars[@"Positions"];
+
+        NSDictionary *platforms = levelOneInformation[@"Platforms"];
+        NSDictionary *platformPatterns = platforms[@"Patterns"];
+        NSArray *platformPositions = platforms[@"Positions"];
+        
+        
+        
         self.backgroundColor = [SKColor whiteColor];
         self.physicsWorld.gravity = CGVectorMake(0.0f, -2.0f);
         self.physicsWorld.contactDelegate = self;
@@ -39,23 +57,58 @@ typedef NS_OPTIONS(uint32_t, Category){
         _backgroundNode = [self createBackgroundNode];
         [self addChild:_backgroundNode];
         
+        //Midground
+        _midgroundNode = [self createMidgroundNode];
+        [self addChild:_midgroundNode];
+        
         //Foreground
         _foregroundNode = [SKNode node];
         _player = [self createPlayer];
         [_foregroundNode addChild: _player];
         [self addChild: _foregroundNode];
         
+        
+        
         //Hud
         _hudNode = [self createHudNode];
         [self addChild:_hudNode];
         
         //Star
-        Star *star = [self createStarAtPosition:CGPointMake(160.0f, 200.0f) withCategory:0];
-        [self addChild:star];
+        for (NSDictionary *starPosition in starPositions) {
+            
+            CGFloat positionX = [starPosition[@"x"] floatValue];
+            CGFloat positionY = [starPosition[@"y"] floatValue];
+            NSString *pattern = starPosition[@"pattern"];
+            
+            NSArray *patternInformation = starPatterns[pattern];
+            for (NSDictionary *starPattern in patternInformation) {
+                
+                CGFloat patternX = [starPattern[@"x"] floatValue];
+                CGFloat patternY = [starPattern[@"y"] floatValue];
+                StarCategory patternStarCategory = [starPattern[@"type"] intValue];
+                Star *star = [self createStarAtPosition:CGPointMake(patternX + positionX, patternY + positionY) withCategory:patternStarCategory];
+                [_foregroundNode addChild:star];
+            }
+            
+        }
         
         //Platform
-        Platform *platform = [self createPlatformAtPosition:CGPointMake(160.0f, 250.0f) withCategory:0];
-        [self addChild:platform];
+        for (NSDictionary *platformPosition in platformPositions) {
+            CGFloat positionX = [platformPosition[@"x"] floatValue];
+            CGFloat positionY = [platformPosition[@"y"] floatValue];
+            NSString *pattern = platformPosition[@"pattern"];
+            
+            NSArray *patternInformation = platformPatterns[pattern];
+            for (NSDictionary *platformPattern in patternInformation) {
+                CGFloat patternX = [platformPattern[@"x"] floatValue];
+                CGFloat patternY = [platformPattern[@"y"] floatValue];
+                PlatformCategory patternPlatformCategory = [platformPattern[@"type"] intValue];
+                
+                Platform *platform = [self createPlatformAtPosition:CGPointMake(positionX + patternX, positionY + patternY) withCategory:patternPlatformCategory];
+                [_foregroundNode addChild:platform];
+            }
+        }
+        
         
     }
     
@@ -76,6 +129,34 @@ typedef NS_OPTIONS(uint32_t, Category){
     
     return backgroundNode;
 
+}
+
+-(SKNode *) createMidgroundNode{
+    
+    SKNode *midgroundNode = [SKNode node];
+    
+    for (int i = 0; i < 10; i++) {
+        NSString *spriteName;
+        
+        int r = arc4random()%2;
+        
+        if(r > 0){
+            
+            spriteName = @"BranchRight";
+            
+            
+        }
+        else{
+            spriteName = @"BranchLeft";
+        }
+        
+        SKSpriteNode *branchNode = [SKSpriteNode spriteNodeWithImageNamed:spriteName];
+        branchNode.position = CGPointMake(160.0f, 500.0f * i);
+        [midgroundNode addChild:branchNode];
+    }
+    
+    return midgroundNode;
+    
 }
 
 -(SKNode *)createHudNode{
@@ -119,8 +200,15 @@ typedef NS_OPTIONS(uint32_t, Category){
     Star *star = [Star node];
     [star setPosition: point];
     [star setCategory:category];
-    SKSpriteNode *starImageNode = [SKSpriteNode spriteNodeWithImageNamed:@"Star"];
+    SKSpriteNode *starImageNode;
+    if (category == StarCategoryNormal) {
+        starImageNode = [SKSpriteNode spriteNodeWithImageNamed:@"Star"];
+    }
+    else{
+        starImageNode = [SKSpriteNode spriteNodeWithImageNamed:@"StarSpecial"];
+    }
     star.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:starImageNode.size.width/2];
+    
     star.physicsBody.dynamic = NO;
     [star addChild:starImageNode];
     star.physicsBody.categoryBitMask = CategoryStar;
@@ -151,6 +239,8 @@ typedef NS_OPTIONS(uint32_t, Category){
     
 }
 
+
+
 -(void)didBeginContact:(SKPhysicsContact *)contact{
     
     BOOL updateHUD = NO;
@@ -175,8 +265,20 @@ typedef NS_OPTIONS(uint32_t, Category){
     else{
         [_hudNode removeFromParent];
         _player.physicsBody.dynamic = YES;
-        [_player.physicsBody applyImpulse:CGVectorMake(0.0f, 100.0f)];
+        [_player.physicsBody applyImpulse:CGVectorMake(0.0f, 20.0f)];
         
+    }
+    
+}
+
+-(void)update:(NSTimeInterval)currentTime{
+    
+    
+    if(_player.position.y > 240.0f){
+        
+        _backgroundNode.position = CGPointMake(0.0f,-((_player.position.y-240.0f)/10));
+        _midgroundNode.position = CGPointMake(0.0f, -((_player.position.y-240.0f)/4));
+        _foregroundNode.position = CGPointMake(0.0f,-(_player.position.y-240.0f));
     }
     
 }
