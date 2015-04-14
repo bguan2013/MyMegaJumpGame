@@ -12,10 +12,9 @@
 
 -(BOOL)collisionWithPlayer:(SKNode *)player{
     
-    
-    
     if(player.physicsBody.velocity.dy < 0.0f){
         if(self.catergory == PlatformCategoryBreak){
+            player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 250.0f);
             [self removeFromParent];
         }
         

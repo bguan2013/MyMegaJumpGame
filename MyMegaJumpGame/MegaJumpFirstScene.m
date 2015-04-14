@@ -15,14 +15,23 @@ typedef NS_OPTIONS(uint32_t, Category){
     CategoryPlatform = 0x1 << 2
 };
 
+typedef NS_ENUM(int, PlayerMovement){
+    PlayerMovementNone = 0,
+    PlayerMovementLeft = 1,
+    PlayerMovementRight = 2
+};
+
 @interface MegaJumpFirstScene() <SKPhysicsContactDelegate> {
     
+
+    CGVector _playerVelocity;
     SKNode *_backgroundNode;
     SKNode *_midgroundNode;
     SKNode *_foregroundNode;
     SKNode *_hudNode;
     SKNode *_player;
     int _endY;
+    PlayerMovement _movement;
     
 }
 
@@ -34,10 +43,14 @@ typedef NS_OPTIONS(uint32_t, Category){
     
     if (self = [super initWithSize:size]) {
         
+        
         NSString *levelOnePlist = [[NSBundle mainBundle] pathForResource:@"Level01" ofType:@"plist"];
         NSDictionary *levelOneInformation = [NSDictionary dictionaryWithContentsOfFile:levelOnePlist];
         
+        //Variable initiation
+        _playerVelocity = CGVectorMake(0.0f, 20.0f);
         _endY = [levelOneInformation[@"EndY"] intValue];
+        _movement = PlayerMovementNone;
         
         NSDictionary *stars = levelOneInformation[@"Stars"];
         NSDictionary *starPatterns = stars[@"Patterns"];
@@ -164,6 +177,7 @@ typedef NS_OPTIONS(uint32_t, Category){
     SKNode *node = [SKNode node];
     SKSpriteNode *imageNode = [SKSpriteNode spriteNodeWithImageNamed:@"TapToStart"];
     imageNode.position = CGPointMake(160.0f, 180.0f);
+    [imageNode setName:@"Start"];
     [node addChild: imageNode];
     return node;
 
@@ -260,15 +274,45 @@ typedef NS_OPTIONS(uint32_t, Category){
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     if(_player.physicsBody.dynamic){
-        return;
+        
+        if(touches.count == 1) {
+            
+            UITouch *touch = [touches anyObject];
+            CGPoint touchPosition = [touch locationInNode:self];
+            if (touchPosition.x <= self.size.width/2) {
+                _movement = PlayerMovementLeft;
+            }
+            else{
+                _movement = PlayerMovementRight;
+            }
+            
+        }
     }
     else{
-        [_hudNode removeFromParent];
-        _player.physicsBody.dynamic = YES;
-        [_player.physicsBody applyImpulse:CGVectorMake(0.0f, 20.0f)];
+        if(touches.count == 1) {
+            
+            UITouch *touch = [touches anyObject];
+            CGPoint touchPosition = [touch locationInNode:self];
+            SKNode *startNode = [self nodeAtPoint:touchPosition];
+            
+            if ([startNode.name isEqualToString:@"Start"]) {
+                [_hudNode removeFromParent];
+                _player.physicsBody.dynamic = YES;
+                [_player.physicsBody applyImpulse: _playerVelocity];
+            }
+            else{
+                return;
+            }
+        }
+        
         
     }
     
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    _movement = PlayerMovementNone;
 }
 
 -(void)update:(NSTimeInterval)currentTime{
@@ -279,6 +323,26 @@ typedef NS_OPTIONS(uint32_t, Category){
         _backgroundNode.position = CGPointMake(0.0f,-((_player.position.y-240.0f)/10));
         _midgroundNode.position = CGPointMake(0.0f, -((_player.position.y-240.0f)/4));
         _foregroundNode.position = CGPointMake(0.0f,-(_player.position.y-240.0f));
+    }
+    
+    if(_player.position.x < -20.0f){
+        
+        _player.position = CGPointMake((self.size.width - _player.position.x), _player.position.y);
+    }
+    else if(_player.position.x > self.size.width+20.0f){
+        
+        _player.position = CGPointMake((_player.position.x-self.size.width), _player.position.y);
+    }
+    
+    if(_movement != PlayerMovementNone){
+        if (_movement == PlayerMovementLeft) {
+            [_player.physicsBody applyForce:CGVectorMake(-60.0f, 0.0f)];
+        }
+        else{
+            //Right
+            [_player.physicsBody applyForce:CGVectorMake(60.0f, 0.0f)];
+            
+        }
     }
     
 }

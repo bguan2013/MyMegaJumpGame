@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42817C51ADC9FCE00F4566E /* GameState.m in Sources */ = {isa = PBXBuildFile; fileRef = C42817C41ADC9FCE00F4566E /* GameState.m */; };
+		C42817C81ADCBC0300F4566E /* EndGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C42817C71ADCBC0300F4566E /* EndGameScene.m */; };
 		C43FA1F71AD4D35D009A2582 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = C43FA1F61AD4D35D009A2582 /* Player.m */; };
 		C472C7EC1AD36F3300697F3B /* Assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C01AD36F3300697F3B /* Assets.atlas */; };
 		C472C7ED1AD36F3300697F3B /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C472C7C21AD36F3300697F3B /* Background.png */; };
@@ -79,6 +81,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C42817C31ADC9FCE00F4566E /* GameState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameState.h; sourceTree = "<group>"; };
+		C42817C41ADC9FCE00F4566E /* GameState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameState.m; sourceTree = "<group>"; };
+		C42817C61ADCBC0300F4566E /* EndGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGameScene.h; sourceTree = "<group>"; };
+		C42817C71ADCBC0300F4566E /* EndGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGameScene.m; sourceTree = "<group>"; };
 		C43FA1F51AD4D35D009A2582 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		C43FA1F61AD4D35D009A2582 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		C472C7C01AD36F3300697F3B /* Assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Assets.atlas; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 				C4B26FBE1A7FF25E00D6A3E9 /* AppDelegate.m */,
 				C472C8191AD3706D00697F3B /* MegaJumpFirstScene.h */,
 				C472C81A1AD3706D00697F3B /* MegaJumpFirstScene.m */,
+				C42817C61ADCBC0300F4566E /* EndGameScene.h */,
+				C42817C71ADCBC0300F4566E /* EndGameScene.m */,
 				C472C81C1AD372D200697F3B /* MegaJumpFirstScene.sks */,
 				C4B26FC51A7FF25E00D6A3E9 /* GameViewController.h */,
 				C4B26FC61A7FF25E00D6A3E9 /* GameViewController.m */,
@@ -285,6 +293,8 @@
 				C43FA1F61AD4D35D009A2582 /* Player.m */,
 				C4FBC6C81ADA1ED300097905 /* Star.h */,
 				C4FBC6C91ADA1ED300097905 /* Star.m */,
+				C42817C31ADC9FCE00F4566E /* GameState.h */,
+				C42817C41ADC9FCE00F4566E /* GameState.m */,
 				C47CFFF51ADA2E0800731C5A /* Platform.h */,
 				C47CFFF61ADA2E0800731C5A /* Platform.m */,
 				C4FBC6C51ADA1A8B00097905 /* GameObjectNode.h */,
@@ -467,12 +477,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B26FC71A7FF25E00D6A3E9 /* GameViewController.m in Sources */,
+				C42817C51ADC9FCE00F4566E /* GameState.m in Sources */,
 				C4B26FBF1A7FF25E00D6A3E9 /* AppDelegate.m in Sources */,
 				C47CFFF71ADA2E0800731C5A /* Platform.m in Sources */,
 				C4FBC6CA1ADA1ED300097905 /* Star.m in Sources */,
 				C472C81B1AD3706D00697F3B /* MegaJumpFirstScene.m in Sources */,
 				C43FA1F71AD4D35D009A2582 /* Player.m in Sources */,
 				C4B26FBC1A7FF25E00D6A3E9 /* main.m in Sources */,
+				C42817C81ADCBC0300F4566E /* EndGameScene.m in Sources */,
 				C4FBC6C71ADA1A8B00097905 /* GameObjectNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
