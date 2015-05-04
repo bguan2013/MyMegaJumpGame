@@ -30,8 +30,19 @@ typedef NS_ENUM(int, PlayerMovement){
     SKNode *_foregroundNode;
     SKNode *_hudNode;
     SKNode *_player;
+    
+    SKSpriteNode *_startNode;
+    SKSpriteNode *_starCountSprite;
+    
     int _endY;
+    int _playerMaxY;
+
+    BOOL _endGame;
+    
     PlayerMovement _movement;
+    
+    SKLabelNode *_starCount;
+    SKLabelNode *_scoreCount;
     
 }
 
@@ -66,6 +77,10 @@ typedef NS_ENUM(int, PlayerMovement){
         self.physicsWorld.gravity = CGVectorMake(0.0f, -2.0f);
         self.physicsWorld.contactDelegate = self;
         
+        _playerMaxY = 0;
+        _endGame = NO;
+        [[GameState sharedInstance] reset];
+        
         //Background
         _backgroundNode = [self createBackgroundNode];
         [self addChild:_backgroundNode];
@@ -83,7 +98,22 @@ typedef NS_ENUM(int, PlayerMovement){
         
         
         //Hud
+        _startNode = [self createStartNode];
+        
+        _starCount = [self createStarCount];
+        _starCountSprite = [self createStarCountSprite];
+        _scoreCount = [self createScoreCount];
+
         _hudNode = [self createHudNode];
+        
+        [_hudNode addChild:_startNode];
+        
+        [_hudNode addChild:_starCount];
+        [_hudNode addChild:_starCountSprite];
+        
+        [_hudNode addChild:_scoreCount];
+        
+        
         [self addChild:_hudNode];
         
         //Star
@@ -172,13 +202,53 @@ typedef NS_ENUM(int, PlayerMovement){
     
 }
 
--(SKNode *)createHudNode{
+-(SKLabelNode *)createStarCount{
     
-    SKNode *node = [SKNode node];
+    SKLabelNode *starCount = [SKLabelNode labelNodeWithFontNamed:@"HelveticaNeue"];
+    starCount.fontColor = [SKColor whiteColor];
+    starCount.fontSize = 30;
+    starCount.position = CGPointMake(50, self.size.height-40);
+    starCount.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
+    [starCount setText:[NSString stringWithFormat: @"= %d", [GameState sharedInstance].numberOfStars]];
+    return starCount;
+}
+
+-(SKLabelNode *)createScoreCount{
+    
+    SKLabelNode *scoreCount = [SKLabelNode labelNodeWithFontNamed:@"helveticaNeue"];
+    scoreCount.fontSize = 30;
+    scoreCount.fontColor = [SKColor whiteColor];
+    scoreCount.position = CGPointMake(self.size.width-25, self.size.height -40);
+    scoreCount.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+    [scoreCount setText:[NSString stringWithFormat: @"%d", [GameState sharedInstance].score]];
+    
+    return scoreCount;
+
+}
+
+-(SKSpriteNode *)createStartNode{
+    
     SKSpriteNode *imageNode = [SKSpriteNode spriteNodeWithImageNamed:@"TapToStart"];
     imageNode.position = CGPointMake(160.0f, 180.0f);
     [imageNode setName:@"Start"];
-    [node addChild: imageNode];
+    
+    return imageNode;
+    
+}
+
+-(SKSpriteNode *)createStarCountSprite{
+    
+    //start star node
+    SKSpriteNode *starCountSprite = [SKSpriteNode spriteNodeWithImageNamed: @"Star"];
+    starCountSprite.position = CGPointMake(25, self.size.height-30);
+    //end star node
+    return starCountSprite;
+    
+}
+
+-(SKNode *)createHudNode{
+    
+    SKNode *node = [SKNode node];
     return node;
 
 }
@@ -207,6 +277,10 @@ typedef NS_ENUM(int, PlayerMovement){
     
     return player;
 }
+
+
+    
+
 
 
 -(Star *)createStarAtPosition: (CGPoint)point withCategory:(int) category{
@@ -264,7 +338,8 @@ typedef NS_ENUM(int, PlayerMovement){
     updateHUD = [otherNodeThanPlayer collisionWithPlayer:_player];
     
     if(updateHUD){
-        
+        [_starCount setText: [NSString stringWithFormat:@"= %d", [GameState sharedInstance].numberOfStars]];
+        [_scoreCount setText: [NSString stringWithFormat:@"%d", [GameState sharedInstance].score]];
         
     }
     
@@ -296,7 +371,7 @@ typedef NS_ENUM(int, PlayerMovement){
             SKNode *startNode = [self nodeAtPoint:touchPosition];
             
             if ([startNode.name isEqualToString:@"Start"]) {
-                [_hudNode removeFromParent];
+                [_startNode removeFromParent];
                 _player.physicsBody.dynamic = YES;
                 [_player.physicsBody applyImpulse: _playerVelocity];
             }
@@ -318,6 +393,11 @@ typedef NS_ENUM(int, PlayerMovement){
 -(void)update:(NSTimeInterval)currentTime{
     
     
+    if(_endGame){
+        return;
+    }
+    
+    //Moving the backgrounds
     if(_player.position.y > 240.0f){
         
         _backgroundNode.position = CGPointMake(0.0f,-((_player.position.y-240.0f)/10));
@@ -325,6 +405,8 @@ typedef NS_ENUM(int, PlayerMovement){
         _foregroundNode.position = CGPointMake(0.0f,-(_player.position.y-240.0f));
     }
     
+    
+    //setting a horizontal loop for the player
     if(_player.position.x < -20.0f){
         
         _player.position = CGPointMake((self.size.width - _player.position.x), _player.position.y);
@@ -334,6 +416,8 @@ typedef NS_ENUM(int, PlayerMovement){
         _player.position = CGPointMake((_player.position.x-self.size.width), _player.position.y);
     }
     
+    
+    //applying forces
     if(_movement != PlayerMovementNone){
         if (_movement == PlayerMovementLeft) {
             [_player.physicsBody applyForce:CGVectorMake(-60.0f, 0.0f)];
@@ -345,6 +429,86 @@ typedef NS_ENUM(int, PlayerMovement){
         }
     }
     
+    //updateMaxPlayerY
+    [self updateMaxPlayerY];
+    
+    //removing platforms and stars
+    [self removeBottomNodes];
+    
+    //check if gameover
+    [self checkGameOver];
+    
 }
+
+-(void)updateMaxPlayerY{
+    
+    //Adding height points to score
+    if (_playerMaxY < _player.position.y) {
+        
+        [GameState sharedInstance].score += ((int)_player.position.y - _playerMaxY);
+        _playerMaxY = _player.position.y;
+        [_scoreCount setText:[NSString stringWithFormat:@"%d", [GameState sharedInstance].score]];
+    }
+    
+    
+}
+
+
+-(void)removeBottomNodes{
+    
+    //removing platforms and stars
+    [_foregroundNode enumerateChildNodesWithName:@"platform" usingBlock:^(SKNode *node, BOOL *stop){
+        //block is used
+        [((Platform *)node) checkNodeRemoval:_player.position.y];
+        
+    }];
+    
+    [_foregroundNode enumerateChildNodesWithName:@"star" usingBlock:^(SKNode *node, BOOL *stop){
+        
+        [((Star *) node) checkNodeRemoval:_player.position.y];
+        
+    }];
+}
+
+-(void)checkGameOver{
+    
+    if(_player.position.y < _playerMaxY -400){
+        
+        [self gameOver];
+    }
+    
+    else if(_player.position.y >= _endY){
+        
+        [self gameWin];
+    }
+    
+    
+    
+}
+
+
+-(void)gameOver{
+    
+    _endGame = YES;
+    EndGameScene *endGameScene  = [[EndGameScene alloc] initWithSize:self.size];
+    SKTransition *transition = [SKTransition fadeWithDuration:0.5];
+    [self.view presentScene:endGameScene transition:transition];
+    
+    
+}
+
+-(void)gameWin{
+    
+    _endGame = YES;
+    EndGameScene *endGameScene  = [[EndGameScene alloc] initWithSize:self.size];
+    SKTransition *transition = [SKTransition fadeWithDuration:0.5];
+    [self.view presentScene:endGameScene transition:transition];
+    
+}
+
+
+
+
+
 
 @end

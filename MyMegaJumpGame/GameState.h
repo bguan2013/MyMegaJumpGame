@@ -15,8 +15,8 @@
 @property(nonatomic, assign) int highestScore;
 @property(nonatomic, assign) int numberOfStars;
 
-//+(instancetype)sharedInstance;
++(instancetype)sharedInstance;
 -(void)saveState;
-//-(void)loadState:(int)level;
+-(void)reset;
 
 @end

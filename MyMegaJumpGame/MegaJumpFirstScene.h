@@ -11,6 +11,8 @@
 #import "Player.h"
 #import "Star.h"
 #import "Platform.h"
+#import "GameState.h"
+#import "EndGameScene.h"
 @interface MegaJumpFirstScene : SKScene
 
 @end

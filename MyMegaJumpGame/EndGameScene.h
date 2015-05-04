@@ -7,7 +7,11 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GameState.h"
+#import "MegaJumpFirstScene.h"
 
 @interface EndGameScene : SKScene
+
+-(id)initWithSize:(CGSize)size;
 
 @end

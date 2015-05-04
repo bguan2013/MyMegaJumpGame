@@ -22,18 +22,21 @@
     
 }
 
-/*+(instancetype)sharedInstance{
++(instancetype)sharedInstance{
     
     static dispatch_once_t once = false;
     static GameState *instance = nil;
     
-    dispatch_once(&once, ^{instance = [[super alloc] init];});
+    dispatch_once(&once, ^{instance = [[super alloc] initWithLevel:1];});
     
     return instance;
-}*/
+}
 
 -(void)loadInitialState:(int) level{
     
+    self.score = 0;
+    self.numberOfStars = 0;
+    self.level = level;
 }
 
 -(void)saveState{
@@ -47,7 +50,13 @@
     self.numberOfStars = 0;
 }
 
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    
+}
 
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    return self;
+}
 
 
 @end
