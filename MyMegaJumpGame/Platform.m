@@ -14,14 +14,27 @@
     
     if(player.physicsBody.velocity.dy < 0.0f){
         if(self.catergory == PlatformCategoryBreak){
-            player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 250.0f);
-            [self removeFromParent];
+            
+            [player runAction:[SKAction sequence:@[[SKAction group:@[[SKAction runBlock:^(void){
+                player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 0.0f);
+                [self removeFromParent];
+            }],[SKAction scaleXTo:1.0f y:0.6f duration:0.03]]],[SKAction group:@[[SKAction scaleXTo:1.0f y:1.0f duration:0.03],[SKAction runBlock:^(void){
+                player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 250.0f);
+            }]]]]]
+             ];
+            
+            
         }
         
         else{
-            player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 250.0f);
+            
+            [player runAction:[SKAction sequence:@[[SKAction group:@[[SKAction runBlock:^(void){
+                player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 0.0f);
+            }],[SKAction scaleXTo:1.0f y:0.6f duration:0.03]]],[SKAction group:@[[SKAction scaleXTo:1.0f y:1.0f duration:0.03],[SKAction runBlock:^(void){
+                player.physicsBody.velocity = CGVectorMake(player.physicsBody.velocity.dx, 250.0f);
+            }]]]]]
+             ];
         }
-        
     }
     return NO;
     

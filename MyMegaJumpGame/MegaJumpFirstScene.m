@@ -21,7 +21,10 @@ typedef NS_ENUM(int, PlayerMovement){
     PlayerMovementRight = 2
 };
 
+static int const LEVEL = 1;
+
 @interface MegaJumpFirstScene() <SKPhysicsContactDelegate> {
+    
     
 
     CGVector _playerVelocity;
@@ -77,9 +80,15 @@ typedef NS_ENUM(int, PlayerMovement){
         self.physicsWorld.gravity = CGVectorMake(0.0f, -2.0f);
         self.physicsWorld.contactDelegate = self;
         
+        
+        //Setting the player's max Y
         _playerMaxY = 0;
+        
+        //Set the game state
         _endGame = NO;
-        [[GameState sharedInstance] reset];
+        
+        //Loading and resetting the scores
+        [[GameState sharedInstance] loadInitialStateWithLevel:LEVEL];
         
         //Background
         _backgroundNode = [self createBackgroundNode];
@@ -288,6 +297,7 @@ typedef NS_ENUM(int, PlayerMovement){
     Star *star = [Star node];
     [star setPosition: point];
     [star setCategory:category];
+    [star setName:@"Star"];
     SKSpriteNode *starImageNode;
     if (category == StarCategoryNormal) {
         starImageNode = [SKSpriteNode spriteNodeWithImageNamed:@"Star"];
@@ -309,7 +319,8 @@ typedef NS_ENUM(int, PlayerMovement){
     
     Platform *platform = [Platform node];
     [platform setPosition:position];
-    platform.catergory = category;
+    [platform setCatergory:category];
+    [platform setName:@"PlatForm"];
     SKSpriteNode *platformImageNode;
     if(category == PlatformCategoryBreak){
         platformImageNode = [SKSpriteNode spriteNodeWithImageNamed:@"PlatformBreak"];
@@ -457,13 +468,15 @@ typedef NS_ENUM(int, PlayerMovement){
 -(void)removeBottomNodes{
     
     //removing platforms and stars
-    [_foregroundNode enumerateChildNodesWithName:@"platform" usingBlock:^(SKNode *node, BOOL *stop){
+    [_foregroundNode enumerateChildNodesWithName:@"Platform" usingBlock:^(SKNode *node, BOOL *stop){
         //block is used
+        
         [((Platform *)node) checkNodeRemoval:_player.position.y];
         
     }];
     
-    [_foregroundNode enumerateChildNodesWithName:@"star" usingBlock:^(SKNode *node, BOOL *stop){
+    [_foregroundNode enumerateChildNodesWithName:@"Star" usingBlock:^(SKNode *node, BOOL *stop){
+        
         
         [((Star *) node) checkNodeRemoval:_player.position.y];
         
@@ -472,7 +485,7 @@ typedef NS_ENUM(int, PlayerMovement){
 
 -(void)checkGameOver{
     
-    if(_player.position.y < _playerMaxY -400){
+    if(_player.position.y < _playerMaxY - 800.0f){
         
         [self gameOver];
     }
@@ -490,6 +503,7 @@ typedef NS_ENUM(int, PlayerMovement){
 -(void)gameOver{
     
     _endGame = YES;
+    [[GameState sharedInstance] updateHighScoreInLevel:LEVEL WithHighScore: [GameState sharedInstance].score];
     EndGameScene *endGameScene  = [[EndGameScene alloc] initWithSize:self.size];
     SKTransition *transition = [SKTransition fadeWithDuration:0.5];
     [self.view presentScene:endGameScene transition:transition];
@@ -500,6 +514,7 @@ typedef NS_ENUM(int, PlayerMovement){
 -(void)gameWin{
     
     _endGame = YES;
+    [[GameState sharedInstance] updateHighScoreInLevel:LEVEL WithHighScore: [GameState sharedInstance].score];
     EndGameScene *endGameScene  = [[EndGameScene alloc] initWithSize:self.size];
     SKTransition *transition = [SKTransition fadeWithDuration:0.5];
     [self.view presentScene:endGameScene transition:transition];

@@ -12,11 +12,15 @@
 
 @property(nonatomic, assign) int level;
 @property(nonatomic, assign) int score;
-@property(nonatomic, assign) int highestScore;
+@property(nonatomic, assign) int highestScoreOne;
+@property(nonatomic, assign) int highestScoreTwo;
+@property(nonatomic, assign) int highestScoreThree;
 @property(nonatomic, assign) int numberOfStars;
 
 +(instancetype)sharedInstance;
 -(void)saveState;
 -(void)reset;
-
+-(int)getHighScoreFromLevel:(int) level;
+-(void)updateHighScoreInLevel:(int) level WithHighScore:(int) highscore;
+-(void)loadInitialStateWithLevel:(int) level;
 @end

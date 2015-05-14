@@ -12,6 +12,9 @@
     
     SKLabelNode *_scoreLabel;
     SKLabelNode *_starLabel;
+    SKSpriteNode *_star;
+    
+    SKLabelNode *_highScoreLabel;
     
     SKSpriteNode *_mainMenuButton;
     SKSpriteNode *_replayButton;
@@ -29,10 +32,17 @@
         
         _scoreLabel = [self createScoreLabel];
         _starLabel = [self createStarLabel];
-    
+        _mainMenuButton = [self createMainMenuButton];
+        _replayButton = [self createReplayButton];
+        _star = [self createStar];
+        _highScoreLabel = [self createHighScoreLabel];
+        
         [self addChild:_scoreLabel];
         [self addChild:_starLabel];
-        
+        [self addChild:_mainMenuButton];
+        [self addChild:_replayButton];
+        [self addChild:_star];
+        [self addChild:_highScoreLabel];
         
     }
     return self;
@@ -52,20 +62,46 @@
     SKLabelNode *starLabel = [SKLabelNode labelNodeWithFontNamed:@"helveticaNeue"];
     starLabel.fontColor = [SKColor whiteColor];
     starLabel.fontSize = 30;
-    [starLabel setText:[NSString stringWithFormat:@"%d", [GameState sharedInstance].numberOfStars]];
+    [starLabel setText:[NSString stringWithFormat:@" = %d", [GameState sharedInstance].numberOfStars]];
     starLabel.position = CGPointMake(self.size.width/2, self.size.height*2/3);
     return starLabel;
 }
 
+-(SKLabelNode *)createHighScoreLabel{
+    
+    SKLabelNode *highScoreLabel = [SKLabelNode labelNodeWithFontNamed:@"helveticaNeue"];
+    highScoreLabel.fontColor = [SKColor whiteColor];
+    highScoreLabel.fontSize = 30;
+    [highScoreLabel setText:[NSString stringWithFormat:@"Highest Score = %d", [[GameState sharedInstance] getHighScoreFromLevel:1]]];
+    highScoreLabel.position = CGPointMake(self.size.width/2, self.size.height/2);
+    
+    return highScoreLabel;
+}
 
--(void)createMainMenuButton{
+-(SKSpriteNode *)createStar{
     
+    SKSpriteNode *star = [SKSpriteNode spriteNodeWithImageNamed:@"Star"];
+    star.position = CGPointMake(self.size.width*2/5 - 20, self.size.height*2/3 + 10);
     
+    return star;
+}
+
+
+-(SKSpriteNode *)createMainMenuButton{
+    
+    SKSpriteNode *menu = [SKSpriteNode spriteNodeWithImageNamed:@"Menu"];
+    menu.position = CGPointMake(self.size.width/4, self.size.height/4);
+    
+    return menu;
     
 }
 
--(void)createReplayButton{
+-(SKSpriteNode *)createReplayButton{
     
+    SKSpriteNode *replay = [SKSpriteNode spriteNodeWithImageNamed:@"Replay"];
+    replay.position = CGPointMake(self.size.width*3/4, self.size.height/4);
+    
+    return replay;
     
 }
 
@@ -75,10 +111,12 @@
     SKNode *temp = [self nodeAtPoint:[touch locationInNode:self]];
     if(temp == _mainMenuButton){
         
-        
+       //[self.view presentScene:<#(SKScene *)#> transition:<#(SKTransition *)#>];
         
     }
     else if(temp == _replayButton){
+        
+        
         
         [self.view presentScene:[[MegaJumpFirstScene alloc] initWithSize:self.size] transition:[SKTransition fadeWithDuration:0.5]];
     }
